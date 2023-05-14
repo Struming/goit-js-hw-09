@@ -20,6 +20,7 @@ onClose(selectedDates) {
 });
 
 const startButton = document.querySelector("[data-start]");
+startButton.setAttribute("disabled", true); // Додано, щоб зробити кнопку неактивною спочатку
 startButton.addEventListener("click", startTimer);
 
 let countdownInterval;
@@ -62,9 +63,9 @@ if (remainingTime <= 0) {
 
 function convertMs(ms) {
 const second = 1000;
-const minute = second * 60;
-const hour = minute * 60;
-const day = hour * 24;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
 
 const days = Math.floor(ms / day);
 const hours = Math.floor((ms % day) / hour);
